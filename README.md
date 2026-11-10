@@ -19,6 +19,7 @@
   <a href="LICENSE"><img alt="License: Apache 2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue"></a>
   <img alt="Version 0.3.0" src="https://img.shields.io/badge/version-0.3.0-informational">
   <img alt="Works with Claude Code, OpenCode, Gemini CLI, Codex, Copilot, Cursor" src="https://img.shields.io/badge/agents-Claude%20Code%20%7C%20OpenCode%20%7C%20Gemini%20%7C%20Codex%20%7C%20Copilot%20%7C%20Cursor-d97757">
+  <a href="https://doi.org/10.5281/zenodo.24095539"><img alt="DOI 10.5281/zenodo.24095539" src="https://zenodo.org/badge/DOI/10.5281/zenodo.24095539.svg"></a>
   <a href="CITATION.cff"><img alt="Cite this repository" src="https://img.shields.io/badge/cite-CITATION.cff-success"></a>
 </p>
 
@@ -235,4 +236,4 @@ ERM is an independent project, not affiliated with or endorsed by Google or by t
 
 ## Cite and license
 
-If ERM helps your work, please cite it with [CITATION.cff](CITATION.cff) (GitHub's **Cite this repository** button). Released under the [Apache License 2.0](LICENSE).
+If ERM helps your work, please cite it: Siriani, A. *Elephant-Referee Model (ERM)*. Zenodo. [doi:10.5281/zenodo.24095539](https://doi.org/10.5281/zenodo.24095539). This DOI always resolves to the latest version; each release also has its own DOI on Zenodo. GitHub's **Cite this repository** button uses [CITATION.cff](CITATION.cff). Released under the [Apache License 2.0](LICENSE).

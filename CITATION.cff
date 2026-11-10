@@ -7,6 +7,7 @@ authors:
     given-names: Allan
     orcid: "https://orcid.org/0000-0001-6351-2642"
 version: 0.3.0
+doi: 10.5281/zenodo.24095539
 date-released: 2026-11-09
 license: Apache-2.0
 repository-code: "https://github.com/siriani/elephant-referee-model"
