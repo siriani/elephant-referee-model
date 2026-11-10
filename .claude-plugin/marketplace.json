@@ -1,0 +1,14 @@
+{
+  "name": "erm",
+  "owner": {
+    "name": "Allan Siriani",
+    "url": "https://github.com/siriani"
+  },
+  "plugins": [
+    {
+      "name": "erm",
+      "source": "./",
+      "description": "Write research with an elephant. Referee it with a goldfish."
+    }
+  ]
+}

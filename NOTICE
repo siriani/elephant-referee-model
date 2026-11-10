@@ -1,0 +1,17 @@
+Elephant-Referee Model (ERM)
+Copyright 2026 Allan Siriani
+
+This product is licensed under the Apache License, Version 2.0.
+
+Conceptual attribution
+----------------------
+ERM adapts the design-and-review pattern of the Elephant-Goldfish Model (EGM),
+published by Google under the Apache License 2.0:
+  https://github.com/google/elephant-goldfish-model
+ERM is an independent project. It contains no code copied from EGM, and it is
+not affiliated with, endorsed by, or supported by Google.
+
+The research-specific rubrics are the author's own formulation, informed by:
+  Feng, B. et al. Agentic AI systems for scientific discovery.
+  Nature Reviews Methods Primers 6, 81 (2026). doi:10.1038/s43586-026-00534-y
+No text, figures or tables from that publication are reproduced here.

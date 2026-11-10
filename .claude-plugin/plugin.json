@@ -1,0 +1,13 @@
+{
+  "name": "erm",
+  "version": "0.1.0",
+  "description": "Elephant-Referee Model: write research with a context-rich elephant, referee it with zero-context goldfish reviewers.",
+  "author": {
+    "name": "Allan Siriani",
+    "url": "https://github.com/siriani"
+  },
+  "homepage": "https://github.com/siriani/elephant-referee-model",
+  "repository": "https://github.com/siriani/elephant-referee-model",
+  "license": "Apache-2.0",
+  "keywords": ["research", "peer-review", "scientific-writing", "agents", "reproducibility", "goldfish-review"]
+}

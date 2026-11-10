@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use ERM in your research, please cite it as below."
+title: "Elephant-Referee Model (ERM): context-rich drafting and zero-context refereeing for scientific work with AI agents"
+type: software
+authors:
+  - family-names: Siriani
+    given-names: Allan
+    orcid: "https://orcid.org/0000-0001-6351-2642"
+version: 0.1.0
+date-released: 2026-11-09
+license: Apache-2.0
+repository-code: "https://github.com/siriani/elephant-referee-model"
+keywords:
+  - scientific writing
+  - peer review
+  - AI agents
+  - reproducibility
+references:
+  - type: software
+    title: "Elephant-Goldfish Model (EGM)"
+    authors:
+      - name: Google
+    repository-code: "https://github.com/google/elephant-goldfish-model"
+  - type: article
+    title: "Agentic AI systems for scientific discovery"
+    authors:
+      - family-names: Feng
+        given-names: Bin
+      - name: "et al."
+    journal: "Nature Reviews Methods Primers"
+    volume: 6
+    start: 81
+    year: 2026
+    doi: "10.1038/s43586-026-00534-y"
