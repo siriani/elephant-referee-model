@@ -1,6 +1,6 @@
 # Contributing to ERM
 
-Contributions are welcome: new rubrics for other study designs, reviewer personas for other fields, and ports to other agent harnesses.
+Contributions are welcome: new rubrics for other study designs, reviewer personas for other fields, and support for other agent harnesses. Adapters are generated: edit `skills/`, `agents/` or `resources/`, then run `python3 scripts/build_adapters.py` and `python3 scripts/validate.py`. See [docs/harnesses.md](docs/harnesses.md).
 
 ## Layout
 

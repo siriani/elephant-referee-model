@@ -1,0 +1,37 @@
+{
+  "name": "erm",
+  "version": "0.3.0",
+  "description": "Write research with an elephant. Referee it with a goldfish.",
+  "author": {
+    "name": "Allan Siriani",
+    "url": "https://github.com/siriani"
+  },
+  "homepage": "https://github.com/siriani/elephant-referee-model",
+  "repository": "https://github.com/siriani/elephant-referee-model",
+  "license": "Apache-2.0",
+  "skills": "./skills/",
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "Elephant-Referee Model",
+    "shortDescription": "Draft research with context, referee it cold",
+    "longDescription": "Take scientific work from research question to submission-ready manuscript. A context-rich agent (the elephant) brainstorms, drafts protocols and manuscripts with you; fresh reviewers with no memory of the conversation (goldfish) referee the document cold, checking scope, comprehension, methods, evaluation, claims, reproducibility, citations and figures. You decide on every finding. Reviews require isolated sub-agents.",
+    "developerName": "Allan Siriani",
+    "brandColor": "#F08C2E",
+    "category": "Productivity",
+    "capabilities": [
+      "Shape a research question",
+      "Draft protocols and manuscripts",
+      "Referee a manuscript with fresh reviewers"
+    ],
+    "defaultPrompt": [
+      "Help me turn this research idea into a focused question and hypotheses.",
+      "Referee this manuscript before I submit it.",
+      "Check that my manuscript still matches my results."
+    ],
+    "websiteURL": "https://github.com/siriani/elephant-referee-model",
+    "supportURL": "https://github.com/siriani/elephant-referee-model/issues",
+    "termsOfServiceURL": "https://github.com/siriani/elephant-referee-model/blob/main/LICENSE",
+    "composerIcon": "./docs/assets/icon.svg",
+    "logo": "./docs/assets/icon.svg"
+  }
+}

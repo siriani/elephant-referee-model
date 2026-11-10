@@ -1,11 +1,13 @@
 ---
 name: erm-provenance
-description: Create or update a provenance record of how AI agents took part in a study or manuscript — models and versions, prompts and skills, sources retrieved, tools, number of runs, and every human intervention — and draft an AI-use disclosure. Use when the user needs to document or disclose AI assistance.
+description: "Create or update a provenance record of how AI agents took part in a study or manuscript — models and versions, prompts and skills, sources retrieved, tools, number of runs, and every human intervention — and draft an AI-use disclosure. Use when the user needs to document or disclose AI assistance."
 ---
 
 # erm-provenance — make the agent's part traceable
 
-Load `<root>/resources/standards/provenance-template.md` and fill it into `provenance.md` at the project root (update it if it exists; never delete earlier entries — append).
+ERM_ROOT is the plugin directory, found as described in `<ERM_ROOT>/resources/standards/dispatch-standard.md` (two levels above this file, following symbolic links).
+
+Load `<ERM_ROOT>/resources/standards/provenance-template.md` and fill it into `provenance.md` at the project root (update it if it exists; never delete earlier entries — append).
 
 ## Gather, do not invent
 

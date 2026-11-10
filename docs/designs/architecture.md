@@ -72,4 +72,4 @@ idea ──erm-brainstorm──▶ research_brief.md
 - Goldfish citation lookups use public services (OpenAlex, Crossref). Offline use needs a local index.
 - Model diversity: should goldfish default to a different model family than the elephant, where the harness allows it?
 - Field packs: rubric sets for animal science, field trials, remote sensing, clinical studies.
-- Ports to other harnesses (Codex, Antigravity, Gemini CLI).
+- Live verification of reviews in each harness (see [harnesses.md](../harnesses.md)).

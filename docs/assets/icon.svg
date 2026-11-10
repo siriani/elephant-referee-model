@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="ERM">
+<rect width="64" height="64" rx="14" fill="#fbfaf7"/>
+<g transform="translate(25,30) scale(.3)">
+  <ellipse fill="#9aa3ae" cx="-8" cy="22" rx="62" ry="40"/>
+  <rect fill="#9aa3ae" x="-48" y="42" width="20" height="34" rx="6"/>
+  <rect fill="#9aa3ae" x="22" y="42" width="20" height="34" rx="6"/>
+  <circle fill="#9aa3ae" cx="50" cy="-10" r="34"/>
+  <ellipse fill="#7b848f" cx="30" cy="-6" rx="20" ry="27"/>
+  <path fill="#9aa3ae" d="M76 0 C92 18 90 48 80 62 C76 68 68 66 70 58 C76 42 72 24 62 12 Z"/>
+  <circle fill="#1f2328" cx="62" cy="-18" r="4"/>
+</g>
+<circle cx="48" cy="44" r="12" fill="#e3f1fa" stroke="#7fb3d5" stroke-width="1.5"/>
+<ellipse cx="49" cy="44" rx="5.5" ry="3.6" fill="#f08c2e"/>
+<path d="M44.5 44 l-4.5 -3.6 v7.2 z" fill="#f08c2e"/>
+<circle cx="51.5" cy="43" r=".9" fill="#1f2328"/>
+</svg>

@@ -1,6 +1,6 @@
 ---
 name: erm-resolve
-description: Work through ERM review findings with the user, one decision at a time, revise the document for accepted findings and keep a response log. Use after erm-review, or when the user wants to address reviewer comments.
+description: "Work through ERM review findings with the user, one decision at a time, revise the document for accepted findings and keep a response log. Use after erm-review, or when the user wants to address reviewer comments."
 ---
 
 # erm-resolve — deciding on findings

@@ -1,13 +1,15 @@
 ---
 name: erm-notebook
-description: Keep a dated, append-only lab notebook of experiments, analysis runs, failures and decisions, recording what was run, with which code and data, what came out and how it deviates from the protocol. Use after running an experiment or analysis, when a result comes in, or when a design decision is made.
+description: "Keep a dated, append-only lab notebook of experiments, analysis runs, failures and decisions, recording what was run, with which code and data, what came out and how it deviates from the protocol. Use after running an experiment or analysis, when a result comes in, or when a design decision is made."
 ---
 
 # erm-notebook — write it down while it happens
 
+ERM_ROOT is the plugin directory, found as described in `<ERM_ROOT>/resources/standards/dispatch-standard.md` (two levels above this file, following symbolic links).
+
 You are the **elephant**. The notebook is the memory the goldfish will never have, and the record that `erm-draft`, `erm-drift` and `erm-provenance` read later.
 
-Load `<root>/resources/standards/lab-notebook-template.md`. Append to `lab_notebook.md` at the project root; create it if it does not exist.
+Load `<ERM_ROOT>/resources/standards/lab-notebook-template.md`. Append to `lab_notebook.md` at the project root; create it if it does not exist.
 
 ## When to write an entry
 

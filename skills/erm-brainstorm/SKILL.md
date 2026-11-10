@@ -1,6 +1,6 @@
 ---
 name: erm-brainstorm
-description: Sharpen a research idea into a focused question, testable hypotheses and a feasible design, with zero-context goldfish lenses challenging the proposal. Use when the user has a research idea, topic or problem and wants to shape it before writing a protocol.
+description: "Sharpen a research idea into a focused question, testable hypotheses and a feasible design, with zero-context goldfish lenses challenging the proposal. Use when the user has a research idea, topic or problem and wants to shape it before writing a protocol."
 ---
 
 # erm-brainstorm — from idea to research brief
@@ -32,7 +32,7 @@ Never invent references. If you cite literature, it must come from a search you 
 
 ## 2. Goldfish lenses
 
-Requires isolated sub-agents; if unavailable, stop after step 1 and say the lens review was not run.
+Requires isolated sub-agents, started as in `<ERM_ROOT>/resources/standards/dispatch-standard.md`; if unavailable, stop after step 1 and say the lens review was not run.
 
 Spawn `erm-lens` six times in parallel, each with `research_brief.md`, `brainstorm-lenses-standard.md` and one lens name:
 `novelty`, `feasibility`, `measurement`, `confounding`, `ethics-and-risk`, `impact`.

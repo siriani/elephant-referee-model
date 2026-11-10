@@ -1,0 +1,8 @@
+---
+description: Runtime routing for ERM workflows only.
+alwaysApply: true
+---
+
+Apply these instructions only while an ERM skill (erm-*) is running.
+ERM_ROOT is the folder that contains `skills/`, `agents/` and `resources/`: two levels above the invoked `skills/<name>/SKILL.md`. Confirm `ERM_ROOT/.cursor-plugin/plugin.json` exists; otherwise ask the user for the installed package path.
+Follow `ERM_ROOT/resources/standards/dispatch-standard.md`. Use Task dispatch to the registered ERM reviewer types, one new task per reviewer and per run. Supply ERM_ROOT and absolute paths only; never the parent's history or reasoning. Reviewers are read-only: write each returned report verbatim to its output path.

@@ -71,6 +71,33 @@ for name in ["erm-review", "erm-brainstorm"]:
     if "stop" not in text or "sub-agent" not in text:
         errors.append(f"skills/{name}: missing isolation stop rule")
 
+# Frontmatter must be valid YAML for every harness (Gemini CLI and Cursor parse it strictly).
+try:
+    import yaml  # type: ignore
+
+    for p in skills + agents + standards:
+        block = re.match(r"^---\n(.*?)\n---\n", p.read_text(encoding="utf-8"), re.S)
+        if block:
+            try:
+                yaml.safe_load(block.group(1))
+            except yaml.YAMLError as e:
+                errors.append(f"{p.relative_to(ROOT)}: invalid YAML frontmatter ({e.__class__.__name__})")
+except ImportError:
+    print("note: PyYAML not installed; YAML frontmatter not checked")
+
+# Gemini CLI loads agents/ with a strict schema: no tool list, no extra keys.
+for p in agents:
+    extra = set(frontmatter(p)) - {"name", "description", "model"}
+    if extra:
+        errors.append(f"{p.relative_to(ROOT)}: frontmatter keys {sorted(extra)} break Gemini CLI; keep name/description only")
+
+# Generated harness adapters must be up to date.
+import subprocess  # noqa: E402
+
+r = subprocess.run([sys.executable, str(ROOT / "scripts/build_adapters.py"), "--check"], capture_output=True, text=True)
+if r.returncode:
+    errors.append("harness adapters out of date: run python3 scripts/build_adapters.py\n" + r.stdout.strip())
+
 print(f"skills={len(skills)} personas={len(agents)} standards={len(standards)}")
 if errors:
     print("\n".join(f"ERROR {e}" for e in errors))

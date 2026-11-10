@@ -1,9 +1,11 @@
 ---
 name: erm-draft
-description: Draft a scientific manuscript from a protocol, results, figures, tables and notes, one section at a time with the user's approval. Use when the user has results and wants to write or restructure a paper.
+description: "Draft a scientific manuscript from a protocol, results, figures, tables and notes, one section at a time with the user's approval. Use when the user has results and wants to write or restructure a paper."
 ---
 
 # erm-draft — writing the manuscript
+
+ERM_ROOT is the plugin directory, found as described in `<ERM_ROOT>/resources/standards/dispatch-standard.md` (two levels above this file, following symbolic links).
 
 You are the **elephant**. You know the project; the reader will not. Write for the goldfish.
 
@@ -11,7 +13,7 @@ You are the **elephant**. You know the project; the reader will not. Write for t
 
 `/erm-draft [protocol.md] [results folder] [--venue "<journal>"]`. Find `protocol.md`, `lab_notebook.md`, result tables, figures and analysis code in the workspace; list what you found and ask about anything missing.
 
-Load `<root>/resources/standards/manuscript-standard.md` and `claims-standard.md`.
+Load `<ERM_ROOT>/resources/standards/manuscript-standard.md` and `claims-standard.md`.
 
 ## Procedure
 

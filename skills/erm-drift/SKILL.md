@@ -1,6 +1,6 @@
 ---
 name: erm-drift
-description: Check that a manuscript still matches its results, tables, figures, code and protocol — numbers, claims, methods and deviations. Use before submission, after re-running analyses, or after revising a paper.
+description: "Check that a manuscript still matches its results, tables, figures, code and protocol — numbers, claims, methods and deviations. Use before submission, after re-running analyses, or after revising a paper."
 ---
 
 # erm-drift — does the text still say what the data show?
@@ -11,7 +11,7 @@ description: Check that a manuscript still matches its results, tables, figures,
 
 ## Checks
 
-Run as a goldfish if sub-agents are available: spawn `erm-claims-auditor` with the manuscript, the listed files and `drift-standard.md`. Otherwise run the checks yourself and say so in the report header (a self-check is weaker than a goldfish check).
+Run as a goldfish if sub-agents are available (see `dispatch-standard.md`): spawn `erm-claims-auditor` with the manuscript, the listed files and `drift-standard.md`. Otherwise run the checks yourself and say so in the report header (a self-check is weaker than a goldfish check).
 
 1. **Numbers.** Every number with a `<!-- src: ... -->` tag is compared with its source. Numbers without a source tag are listed.
 2. **Internal consistency.** Abstract, results, tables, figures and conclusion report the same values; derived values (F1, deltas, percentages, totals) are recomputed with code, not by eye.

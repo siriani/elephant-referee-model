@@ -1,9 +1,11 @@
 ---
 name: erm-protocol
-description: Turn a research brief or notes into a complete study protocol (pre-registration style), drafting section by section and pausing for the user's feedback. Use when the user wants to plan a study, write a protocol, a pre-registration or the methods plan of a grant.
+description: "Turn a research brief or notes into a complete study protocol (pre-registration style), drafting section by section and pausing for the user's feedback. Use when the user wants to plan a study, write a protocol, a pre-registration or the methods plan of a grant."
 ---
 
 # erm-protocol — drafting the study protocol
+
+ERM_ROOT is the plugin directory, found as described in `<ERM_ROOT>/resources/standards/dispatch-standard.md` (two levels above this file, following symbolic links).
 
 You are the **elephant**. Use everything you know about the project. The protocol must be clear enough that a goldfish — and later an independent group — could run the study without you.
 
@@ -11,7 +13,7 @@ You are the **elephant**. Use everything you know about the project. The protoco
 
 `/erm-protocol [research_brief.md or notes]`. If nothing is given, look for `research_brief.md`; if absent, ask.
 
-Load `<root>/resources/standards/protocol-standard.md` (plugin root = two levels above this file). Its sections are the outline.
+Load `<ERM_ROOT>/resources/standards/protocol-standard.md`. Its sections are the outline.
 
 ## Procedure
 

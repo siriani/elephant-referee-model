@@ -1,6 +1,6 @@
 ---
 name: erm-review
-description: Referee a research protocol or manuscript with zero-context goldfish sub-agents across five stages (scope, comprehension, critique, synthesis, readiness). Use when the user asks to review, referee, stress-test or pre-submission-check a scientific document.
+description: "Referee a research protocol or manuscript with zero-context goldfish sub-agents across five stages (scope, comprehension, critique, synthesis, readiness). Use when the user asks to review, referee, stress-test or pre-submission-check a scientific document."
 ---
 
 # erm-review — goldfish refereeing
@@ -15,11 +15,11 @@ You are the **elephant**: you hold the project context. In this skill your job i
 - If `--type` is missing, infer it from the document (a protocol has no results) and state your inference.
 - `--runs N` (default 1, recommended 3 before submission): how many independent instances of each stage 3 critic to run. Agent output is stochastic; one run can miss a problem or invent one. Several runs let the synthesizer report how consistently each finding appears.
 - `--venue-pack <file>`: a filled copy of `venue-pack-template.md` with the venue's own reviewer questions, required statements and AI policy. If `--venue` is given without a pack, say that scope and readiness will use general criteria only, and point the user to the template.
-- Resolve the plugin root as two directories above this file. Rubrics are in `<root>/resources/standards/`.
+- Resolve ERM_ROOT and start every goldfish as described in `dispatch-standard.md`. Rubrics are in `<ERM_ROOT>/resources/standards/`.
 
 ## Preconditions — stop if any fails
 
-1. **Sub-agents.** You must be able to spawn isolated sub-agents (in Claude Code, the Task/Agent tool with the `erm:*` agent types). If you cannot, stop and say: "ERM review needs isolated sub-agents; this session cannot create them, so no review was run." Never simulate a goldfish in your own context.
+1. **Sub-agents.** You must be able to start isolated sub-agents, in the way `dispatch-standard.md` gives for your harness. If you cannot, stop and say: "ERM review needs isolated sub-agents; this session cannot create them, so no review was run." Never simulate a goldfish in your own context.
 2. **Confidentiality.** If the user indicates the document is a manuscript they received to review for a journal, stop and remind them that many publishers forbid uploading submissions to AI tools. Continue only if they confirm the venue's policy allows it.
 3. **Self-contained input.** List the files the document cites locally (supplementary files, tables, code, data dictionaries) and its figure files (images, or the PDF if figures are embedded). These, and only these, are passed to goldfish.
 
