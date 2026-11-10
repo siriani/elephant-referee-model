@@ -236,4 +236,4 @@ ERM is an independent project, not affiliated with or endorsed by Google or by t
 
 ## Cite and license
 
-If ERM helps your work, please cite it: Siriani, A. *Elephant-Referee Model (ERM)*. Zenodo. [doi:10.5281/zenodo.24095539](https://doi.org/10.5281/zenodo.24095539). This DOI always resolves to the latest version; each release also has its own DOI on Zenodo. GitHub's **Cite this repository** button uses [CITATION.cff](CITATION.cff). Released under the [Apache License 2.0](LICENSE).
+If ERM helps your work, please cite it: Siriani, A. L. R. *Elephant-Referee Model (ERM)*. Zenodo. [doi:10.5281/zenodo.24095539](https://doi.org/10.5281/zenodo.24095539). This DOI always resolves to the latest version; each release also has its own DOI on Zenodo. GitHub's **Cite this repository** button uses [CITATION.cff](CITATION.cff). Released under the [Apache License 2.0](LICENSE).

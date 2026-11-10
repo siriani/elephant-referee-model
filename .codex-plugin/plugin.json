@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "Write research with an elephant. Referee it with a goldfish.",
   "author": {
-    "name": "Allan Siriani",
+    "name": "Allan Lincoln Rodrigues Siriani",
     "url": "https://github.com/siriani"
   },
   "homepage": "https://github.com/siriani/elephant-referee-model",
@@ -15,7 +15,7 @@
     "displayName": "Elephant-Referee Model",
     "shortDescription": "Draft research with context, referee it cold",
     "longDescription": "Take scientific work from research question to submission-ready manuscript. A context-rich agent (the elephant) brainstorms, drafts protocols and manuscripts with you; fresh reviewers with no memory of the conversation (goldfish) referee the document cold, checking scope, comprehension, methods, evaluation, claims, reproducibility, citations and figures. You decide on every finding. Reviews require isolated sub-agents.",
-    "developerName": "Allan Siriani",
+    "developerName": "Allan Lincoln Rodrigues Siriani",
     "brandColor": "#F08C2E",
     "category": "Productivity",
     "capabilities": [

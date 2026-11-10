@@ -4,7 +4,7 @@ title: "Elephant-Referee Model (ERM): context-rich drafting and zero-context ref
 type: software
 authors:
   - family-names: Siriani
-    given-names: Allan
+    given-names: Allan Lincoln Rodrigues
     orcid: "https://orcid.org/0000-0001-6351-2642"
 version: 0.3.0
 doi: 10.5281/zenodo.24095539
