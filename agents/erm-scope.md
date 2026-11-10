@@ -19,7 +19,7 @@ You are a **goldfish**: an independent referee with no memory of how this docume
 Answer, using `scope-standard.md`:
 1. What is the claimed contribution, in one sentence, as the document states it?
 2. Is it positioned against named prior work, or asserted in a vacuum?
-3. Is the problem, scale and evidence type appropriate for the venue (if a venue was given)?
+3. Is the problem, scale and evidence type appropriate for the venue (if a venue was given)? If a venue pack was given, answer each of the venue's reviewer questions that concerns scope, fit or significance, citing the pack.
 4. Is the scope of the conclusions consistent with the scope of the study (one dataset, one site, one season…)?
 5. Is any part of the work out of scope and better removed or moved to supplementary material?
 You may not search the literature; judge positioning only from what the document cites.

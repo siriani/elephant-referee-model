@@ -1,6 +1,6 @@
 # ERM architecture
 
-Status: v0.1.0 — 2026-11-09
+Status: v0.2.0 — 2026-11-09
 
 ## Problem
 
@@ -18,6 +18,8 @@ The pattern comes from Google's Elephant-Goldfish Model for software design. ERM
 
 The research requirements follow Feng et al., "Agentic AI systems for scientific discovery", *Nature Reviews Methods Primers* 6, 81 (2026), [doi:10.1038/s43586-026-00534-y](https://doi.org/10.1038/s43586-026-00534-y). From it come the critic roles in a multi-agent workflow, human checkpoints at consequential decisions, explicit documentation of human intervention, provenance linking results to agent decisions, and hallucination as a primary failure mode.
 
+Lu et al., "Towards end-to-end automation of AI research", *Nature* 651 (2026), [doi:10.1038/s41586-026-10265-5](https://doi.org/10.1038/s41586-026-10265-5), is the counterpoint: a system that automates the whole research cycle, including its own review. ERM takes from it the reviewer ensemble (`--runs N`), the citation and figure checks, the literature-based novelty filter, the experiment journal, and the evaluation design in [validation.md](validation.md). It also takes a warning: its automated reviewer accepted 45–52% of papers that human referees rejected, so ERM keeps the human as the decision-maker and calibrates readiness to be strict.
+
 ## Layers
 
 | Layer | Folder | Responsibility | Changes when |
@@ -32,9 +34,9 @@ Skills never contain criteria; personas reference standards by file name. This l
 
 ```text
 idea ──erm-brainstorm──▶ research_brief.md
-        (6 goldfish lenses)
+        (literature search + 6 goldfish lenses)
       ──erm-protocol──▶ protocol.md ──erm-review (protocol)──▶ revise
-      ... study runs ...
+      ... study runs ... ──erm-notebook──▶ lab_notebook.md
       ──erm-draft──▶ manuscript_draft.md
       ──erm-provenance──▶ provenance.md
       ──erm-review──▶ erm-reviews/<doc>/<ts>/01..05
@@ -46,9 +48,9 @@ idea ──erm-brainstorm──▶ research_brief.md
 
 1. **Scope** (`erm-scope`) — fit and positioning.
 2. **Comprehension** (`erm-comprehension`) — gate. Failing stops the pipeline.
-3. **Critique**, in parallel — `erm-methods-critic`, `erm-evaluation-critic` (model-based work only), `erm-claims-auditor` (manuscripts), `erm-reproducibility-auditor`.
-4. **Synthesis** (`erm-synthesizer`) — the only goldfish that reads other reports; merges, deduplicates, ranks.
-5. **Readiness** (`erm-readiness`) — GO / GO WITH FIXES / NO-GO.
+3. **Critique**, in parallel, N runs each (`--runs N`) — `erm-methods-critic`, `erm-evaluation-critic` (model-based work only), `erm-claims-auditor` (manuscripts), `erm-reproducibility-auditor`, `erm-citation-auditor` (if there are references), `erm-figures-critic` (if figure files exist).
+4. **Synthesis** (`erm-synthesizer`) — the only goldfish that reads other reports; merges, deduplicates, ranks, and reports cross-run agreement.
+5. **Readiness** (`erm-readiness`) — GO / GO WITH FIXES / NO-GO, calibrated to be strict; uses the venue pack if given.
 
 ## Invariants
 
@@ -62,11 +64,12 @@ idea ──erm-brainstorm──▶ research_brief.md
 ## Non-goals
 
 - Replacing peer review, statistics consultation or experiments.
-- Benchmarking reviewer quality. (A separate study could do this with fictional manuscripts containing planted flaws.)
+- Benchmarking reviewer quality inside the plugin. The study design is in [validation.md](validation.md).
 - Laboratory automation.
 
 ## Open questions
 
+- Goldfish citation lookups use public services (OpenAlex, Crossref). Offline use needs a local index.
 - Model diversity: should goldfish default to a different model family than the elephant, where the harness allows it?
 - Field packs: rubric sets for animal science, field trials, remote sensing, clinical studies.
 - Ports to other harnesses (Codex, Antigravity, Gemini CLI).

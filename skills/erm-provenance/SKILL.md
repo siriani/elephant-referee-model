@@ -9,7 +9,7 @@ Load `<root>/resources/standards/provenance-template.md` and fill it into `prove
 
 ## Gather, do not invent
 
-- Read what is verifiable: `erm-reviews/` folders, `response_log.md` files, config files, git history, notebooks, `research_brief.md` decisions.
+- Read what is verifiable: `lab_notebook.md` (the main source for runs and human interventions), `erm-reviews/` folders, `response_log.md` files, config files, git history, notebooks, `research_brief.md` decisions.
 - Ask the user for what you cannot verify: which models and versions they used outside this session, which outputs they edited by hand, which candidates or results they selected and why.
 - Mark anything uncertain as `unknown` rather than guessing.
 

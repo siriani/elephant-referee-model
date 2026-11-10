@@ -1,6 +1,6 @@
 {
   "name": "erm",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Elephant-Referee Model: write research with a context-rich elephant, referee it with zero-context goldfish reviewers.",
   "author": {
     "name": "Allan Siriani",

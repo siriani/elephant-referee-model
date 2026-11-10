@@ -1,6 +1,6 @@
 ---
 name: finding-format
-version: 1.0.0
+version: 1.1.0
 ---
 # Finding format and severity scale
 
@@ -14,9 +14,10 @@ Every ERM reviewer writes findings in this format:
 - **Why it matters:** the consequence for the conclusions or for reproduction
 - **Smallest fix:** the minimal change that would resolve it
 - **Needs new data or analysis:** yes | no
+- **Agreement:** k/N runs (synthesis only, when N > 1)
 ```
 
-Reviewer-level IDs use the reviewer prefix (SC-, CO-, ME-, EV-, CL-, RE-, RD-). The synthesizer renumbers as F-01, F-02…
+Reviewer-level IDs use the reviewer prefix (SC-, CO-, ME-, EV-, CL-, RE-, CI-, FG-, RD-). The synthesizer renumbers as F-01, F-02…
 
 ## Severity
 

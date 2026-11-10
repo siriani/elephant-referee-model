@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="License: Apache 2.0" src="https://img.shields.io/badge/license-Apache%202.0-blue"></a>
-  <img alt="Version 0.1.0" src="https://img.shields.io/badge/version-0.1.0-informational">
+  <img alt="Version 0.2.0" src="https://img.shields.io/badge/version-0.2.0-informational">
   <img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-d97757">
   <a href="CITATION.cff"><img alt="Cite this repository" src="https://img.shields.io/badge/cite-CITATION.cff-success"></a>
 </p>
@@ -96,7 +96,8 @@ flowchart LR
     B -->|research_brief.md| P[erm-protocol]
     P -->|protocol.md| R1{{erm-review}}
     R1 --> S[(study runs)]
-    S --> D[erm-draft]
+    S --> N[erm-notebook]
+    N -->|lab_notebook.md| D[erm-draft]
     D -->|manuscript_draft.md| R2{{erm-review}}
     R2 --> X[erm-resolve]
     X --> DR[erm-drift]
@@ -106,15 +107,16 @@ flowchart LR
     classDef goldfish fill:#fde7d2,stroke:#f08c2e,color:#1f2328
     classDef elephant fill:#e6e9ed,stroke:#7b848f,color:#1f2328
     class R1,R2 goldfish
-    class B,P,D,X,DR,PV elephant
+    class B,P,N,D,X,DR,PV elephant
 ```
 
 <sub>Grey: elephant skills, which work with your full context. Orange: goldfish reviews, which see only the file.</sub>
 
 | Skill | Use it to… | Output |
 |---|---|---|
-| [`erm-brainstorm`](skills/erm-brainstorm/SKILL.md) | Sharpen a research question and hypotheses; six goldfish lenses challenge the idea | `research_brief.md` |
+| [`erm-brainstorm`](skills/erm-brainstorm/SKILL.md) | Sharpen a research question; search the literature for the closest work; six goldfish lenses challenge the idea, one of them with its own literature search | `research_brief.md` |
 | [`erm-protocol`](skills/erm-protocol/SKILL.md) | Turn the brief into a study protocol, section by section, pausing for your feedback | `protocol.md` |
+| [`erm-notebook`](skills/erm-notebook/SKILL.md) | Keep an append-only lab notebook: what was run, with which code and data, results, failures, deviations, who decided | `lab_notebook.md` |
 | [`erm-draft`](skills/erm-draft/SKILL.md) | Draft the manuscript from protocol, results and notes; every number carries a source tag | `manuscript_draft.md` |
 | [`erm-review`](skills/erm-review/SKILL.md) | Referee a protocol or manuscript with zero-context goldfish across five stages | `erm-reviews/<doc>/…` |
 | [`erm-resolve`](skills/erm-resolve/SKILL.md) | Work through the findings with you and revise only what you accept | revised document + `response_log.md` |
@@ -126,8 +128,9 @@ flowchart LR
 ```text
 /erm:erm-brainstorm Does early heat stress alter broiler gait scores detectable by video?
 /erm:erm-protocol
+/erm:erm-notebook                    # after each experiment or analysis
 /erm:erm-draft                       # after you have results
-/erm:erm-review manuscript_draft.md
+/erm:erm-review manuscript_draft.md --runs 3 --venue-pack erm-venues/animals.md
 /erm:erm-resolve
 /erm:erm-drift
 /erm:erm-provenance
@@ -146,21 +149,25 @@ flowchart LR
     CO -- passes --> EV[Evaluation protocol]
     CO -- passes --> CL[Claims vs evidence]
     CO -- passes --> RE[Reproducibility]
-    ME & EV & CL & RE --> SY[4 · Synthesis]
+    CO -- passes --> CI[Citations]
+    CO -- passes --> FG[Figures]
+    ME & EV & CL & RE & CI & FG --> SY[4 · Synthesis]
     SY --> RD{5 · Readiness}
     RD --> GO([GO])
     RD --> GF([GO WITH FIXES])
     RD --> NG([NO-GO])
 
     classDef stage fill:#fde7d2,stroke:#f08c2e,color:#1f2328
-    class SC,CO,ME,EV,CL,RE,SY,RD stage
+    class SC,CO,ME,EV,CL,RE,CI,FG,SY,RD stage
 ```
 
 1. **Scope.** Does the work fit the field and the target venue? Is the contribution stated against the state of the art?
 2. **Comprehension.** Can a reader with no context restate question → method → finding? If not, the document goes back before anyone critiques it.
-3. **Critique**, in parallel: methods and statistics, evaluation protocol (for model-based work), claims against evidence, reproducibility.
-4. **Synthesis.** The only goldfish that reads the other reports. It merges, deduplicates and ranks findings by severity.
-5. **Readiness.** Go / no-go: could an independent group reproduce this, and is everything a journal will ask for present?
+3. **Critique**, in parallel: methods and statistics, evaluation protocol (for model-based work), claims against evidence, reproducibility, **citations** (does each reference exist, is it retracted, does it support the sentence?) and **figures** (labels, uncertainty, misleading encodings, duplicates).
+4. **Synthesis.** The only goldfish that reads the other reports. It merges, deduplicates and ranks findings by severity. With `--runs N`, each critic runs N times independently and every finding shows how many runs raised it.
+5. **Readiness.** Go / no-go: could an independent group reproduce this, and is everything a journal will ask for present? The verdict is deliberately strict: any critical finding is a NO-GO, and a GO is never a prediction of acceptance.
+
+**Options.** `--runs N` repeats each critic N times (3 is a good default before submission). `--venue-pack <file>` gives scope and readiness the target journal's own reviewer questions, required statements and AI policy; start from [`venue-pack-template.md`](resources/standards/venue-pack-template.md).
 
 ## Rules ERM enforces
 
@@ -168,9 +175,9 @@ flowchart LR
 |---|---|
 | **Isolation** | Goldfish receive file paths only. Never the conversation, a summary of it, or what the author meant. If the agent cannot create isolated sub-agents, the review **stops** instead of pretending. |
 | **You decide** | Findings are evidence to weigh, not verdicts. ERM never edits your document on a finding you have not accepted. |
-| **No invented references** | Unknown citations are marked `[citation needed]`, never filled in. |
+| **No invented references** | Unknown citations are marked `[citation needed]`, never filled in. A goldfish checks every reference against OpenAlex and Crossref. |
 | **Traceable numbers** | Numbers in drafts carry source tags, so drift between text and results can be checked mechanically. |
-| **Provenance** | AI contributions are recorded so you can disclose them accurately. |
+| **Provenance** | AI contributions and human interventions are recorded, in the lab notebook and the provenance record, so you can disclose them accurately. |
 | **Confidentiality** | Do **not** use ERM on manuscripts you received for confidential peer review unless the journal's policy explicitly allows AI tools. |
 
 ## How it is built
@@ -189,7 +196,7 @@ A goldfish review does not replace experiments, sound statistics, domain experti
 
 ## Background
 
-ERM builds on two sources.
+ERM builds on three sources.
 
 **Google's [Elephant-Goldfish Model](https://github.com/google/elephant-goldfish-model) (EGM)** gives the core pattern: a context-rich agent drafts, and fresh reviewers with no shared memory review the draft. ERM moves that pattern from software design to scientific research. The documents become research briefs, protocols and manuscripts, and the reviewers become scientific referees. The rubrics encode failure modes specific to research, such as pseudo-replication, data leakage, selection on the reporting split, overstated claims and undisclosed AI involvement. The memory metaphor comes from [Dave Rensin's essay](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874).
 
@@ -203,11 +210,24 @@ ERM builds on two sources.
 | Results should keep the **provenance** that links them back to earlier agent decisions | tags numbers in drafts with their source, so `erm-drift` can check text against results |
 | **Hallucinated facts** and unsupported inference are major failure modes | never invents references, and audits claims against evidence |
 
-ERM is an independent project, not affiliated with or endorsed by Google or by the Primer's authors. See [NOTICE](NOTICE).
+**Lu et al. (2026), *[Towards end-to-end automation of AI research](https://doi.org/10.1038/s41586-026-10265-5)***, in *Nature*, is the counterpoint. Its AI Scientist runs the whole cycle alone, from idea to manuscript to its own peer review, and one of its papers passed a workshop's peer review. ERM takes the opposite position, keeping the human as author and decision-maker, but borrows several of its tools and one warning:
+
+| The AI Scientist shows that… | …so ERM |
+|---|---|
+| An ensemble of five reviews plus a meta-review agrees with real decisions about as well as human referees agree with each other | offers `--runs N` and reports how often each finding recurs |
+| Its automated reviewer **accepted 45–52% of papers that humans rejected** (humans: 17%) | makes readiness strict and states that a GO does not predict acceptance |
+| Inaccurate citations and duplicated figures are among its most common failures | adds a citation auditor and a figures critic |
+| Ideas too close to existing literature can be filtered by searching it | adds a literature search and a searching novelty lens to `erm-brainstorm` |
+| Notes taken after each experiment, like a lab journal, feed the write-up | adds `erm-notebook`, read by draft, drift and provenance |
+| Reviews anchored to a venue's reviewer guidelines | adds venue packs |
+| An automated reviewer can be validated against real editorial decisions | follows that design in [docs/designs/validation.md](docs/designs/validation.md) |
+
+ERM is an independent project, not affiliated with or endorsed by Google or by the authors of these papers. See [NOTICE](NOTICE).
 
 ### References
 
 - Feng, B., Walther, P., Zhang, L., *et al.* (2026). Agentic AI systems for scientific discovery. *Nature Reviews Methods Primers*, 6, 81. https://doi.org/10.1038/s43586-026-00534-y
+- Lu, C., Lu, C., Lange, R. T., *et al.* (2026). Towards end-to-end automation of AI research. *Nature*, 651. https://doi.org/10.1038/s41586-026-10265-5
 - Google. *Elephant-Goldfish Model (EGM)*. https://github.com/google/elephant-goldfish-model
 - Rensin, D. *Elephants, goldfish, and the new golden age of software engineering*. Medium. https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874
 

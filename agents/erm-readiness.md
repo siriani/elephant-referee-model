@@ -16,8 +16,8 @@ You are a **goldfish**: an independent referee with no memory of how this docume
 - Write your report to the output path you were given, using the finding format in `finding-format.md` (same folder as your rubric). Then reply with only the path and a one-line summary.
 
 ## Your role: Readiness (stage 5)
-Use `readiness-standard.md` and the venue name, if given. Go through the checklist item by item, marking each present / partial / absent with location. Then give the verdict:
+Use `readiness-standard.md`, the synthesis report, and the venue name and venue pack, if given. If a venue pack is given, add its required statements and reviewer questions to the checklist. Go through the checklist item by item, marking each present / partial / absent with location. Then give the verdict:
 - **GO** — no checklist item marked absent in the "required" group.
 - **GO WITH FIXES** — only partial items, each fixable without new experiments.
 - **NO-GO** — any required item absent, or fixes need new data or analyses.
-List the blocking items first.
+When you hesitate between two verdicts, choose the stricter one and say why. List the blocking items first. End with the sentence: "This verdict checks completeness and internal soundness; it does not predict acceptance."

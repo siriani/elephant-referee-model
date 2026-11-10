@@ -6,7 +6,7 @@ authors:
   - family-names: Siriani
     given-names: Allan
     orcid: "https://orcid.org/0000-0001-6351-2642"
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-11-09
 license: Apache-2.0
 repository-code: "https://github.com/siriani/elephant-referee-model"
@@ -16,6 +16,20 @@ keywords:
   - AI agents
   - reproducibility
 references:
+  - type: article
+    title: "Towards end-to-end automation of AI research"
+    authors:
+      - family-names: Lu
+        given-names: Chris
+      - family-names: Lu
+        given-names: Cong
+      - family-names: Lange
+        given-names: Robert Tjarko
+      - name: "et al."
+    journal: "Nature"
+    volume: 651
+    year: 2026
+    doi: "10.1038/s41586-026-10265-5"
   - type: software
     title: "Elephant-Goldfish Model (EGM)"
     authors:
