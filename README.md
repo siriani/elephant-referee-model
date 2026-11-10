@@ -189,7 +189,27 @@ A goldfish review does not replace experiments, sound statistics, domain experti
 
 ## Background
 
-ERM adapts Google's [Elephant-Goldfish Model](https://github.com/google/elephant-goldfish-model) (EGM) from software design to scientific research. The documents become research briefs, protocols and manuscripts; the reviewers become scientific referees; and the rubrics encode research-specific failure modes such as pseudo-replication, data leakage, selection on the reporting split, overstated claims and undisclosed AI involvement. The memory metaphor comes from [Dave Rensin's essay](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874). ERM is an independent project, not affiliated with or endorsed by Google. See [NOTICE](NOTICE).
+ERM builds on two sources.
+
+**Google's [Elephant-Goldfish Model](https://github.com/google/elephant-goldfish-model) (EGM)** gives the core pattern: a context-rich agent drafts, and fresh reviewers with no shared memory review the draft. ERM moves that pattern from software design to scientific research. The documents become research briefs, protocols and manuscripts, and the reviewers become scientific referees. The rubrics encode failure modes specific to research, such as pseudo-replication, data leakage, selection on the reporting split, overstated claims and undisclosed AI involvement. The memory metaphor comes from [Dave Rensin's essay](https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874).
+
+**Feng et al. (2026), *[Agentic AI systems for scientific discovery](https://doi.org/10.1038/s43586-026-00534-y)***, a Nature Reviews Methods Primer, gives the scientific requirements that shaped ERM's rules:
+
+| The Primer argues that… | …so ERM |
+|---|---|
+| Multi-agent systems split research into roles, including **critics**, coordinated through a shared workflow | uses separate goldfish critics for methods, evaluation, claims and reproducibility, merged by a synthesizer |
+| **Human-in-the-loop** checkpoints belong at consequential decisions, to catch compounding errors and preserve accountability | never applies a finding you have not accepted, and ends every review with a go / no-go decision that you make |
+| Human intervention should be **documented explicitly**, making clear which steps were autonomous and which depended on expert correction | records models, prompts, sources and human interventions in `provenance.md` |
+| Results should keep the **provenance** that links them back to earlier agent decisions | tags numbers in drafts with their source, so `erm-drift` can check text against results |
+| **Hallucinated facts** and unsupported inference are major failure modes | never invents references, and audits claims against evidence |
+
+ERM is an independent project, not affiliated with or endorsed by Google or by the Primer's authors. See [NOTICE](NOTICE).
+
+### References
+
+- Feng, B., Walther, P., Zhang, L., *et al.* (2026). Agentic AI systems for scientific discovery. *Nature Reviews Methods Primers*, 6, 81. https://doi.org/10.1038/s43586-026-00534-y
+- Google. *Elephant-Goldfish Model (EGM)*. https://github.com/google/elephant-goldfish-model
+- Rensin, D. *Elephants, goldfish, and the new golden age of software engineering*. Medium. https://medium.com/@drensin/elephants-goldfish-and-the-new-golden-age-of-software-engineering-c33641a48874
 
 ## Cite and license
 

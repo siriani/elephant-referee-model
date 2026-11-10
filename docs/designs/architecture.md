@@ -16,6 +16,8 @@ Separate *writing* from *refereeing* by memory:
 
 The pattern comes from Google's Elephant-Goldfish Model for software design. ERM adapts it to research: the documents are research briefs, protocols and manuscripts; the reviewers are scientific referees; and the rubrics encode research-specific failure modes (pseudo-replication, leakage, selection on the reporting split, overstated claims, missing provenance of AI involvement).
 
+The research requirements follow Feng et al., "Agentic AI systems for scientific discovery", *Nature Reviews Methods Primers* 6, 81 (2026), [doi:10.1038/s43586-026-00534-y](https://doi.org/10.1038/s43586-026-00534-y). From it come the critic roles in a multi-agent workflow, human checkpoints at consequential decisions, explicit documentation of human intervention, provenance linking results to agent decisions, and hallucination as a primary failure mode.
+
 ## Layers
 
 | Layer | Folder | Responsibility | Changes when |
