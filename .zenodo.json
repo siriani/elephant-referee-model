@@ -1,0 +1,43 @@
+{
+  "title": "Elephant-Referee Model (ERM): context-rich drafting and zero-context refereeing for scientific work with AI agents",
+  "upload_type": "software",
+  "description": "<p>ERM is an open-source plugin for AI agents (Claude Code, OpenCode, Gemini CLI, Codex, GitHub Copilot CLI, Cursor, Antigravity) that structures scientific work from research question to submission-ready manuscript around one rule about who sees what. A context-rich agent (the <em>elephant</em>) brainstorms and drafts with the researcher; fresh sub-agents with no memory of the conversation (the <em>goldfish</em>) referee the document cold across scope, comprehension, methods and statistics, evaluation protocol, claims versus evidence, reproducibility, citations and figures; the researcher decides on every finding.</p><p>ERM adapts the Elephant-Goldfish Model published by Google for software design to scientific research. It is an independent project, not affiliated with or endorsed by Google.</p>",
+  "creators": [
+    {
+      "name": "Siriani, Allan",
+      "orcid": "0000-0001-6351-2642"
+    }
+  ],
+  "license": "Apache-2.0",
+  "access_right": "open",
+  "keywords": [
+    "scientific writing",
+    "peer review",
+    "AI agents",
+    "reproducibility",
+    "research integrity",
+    "large language models"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/siriani/elephant-referee-model",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/google/elephant-goldfish-model",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.1038/s43586-026-00534-y",
+      "relation": "references",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1038/s41586-026-10265-5",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ]
+}
