@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" width="900" height="390" role="img" aria-labelledby="t d">
+<title id="t">How the Elephant-Referee Model works</title>
+<desc id="d">The elephant drafts a manuscript with full project context. Only the document crosses the isolation wall; the conversation and the author's intent are blocked. Three goldfish reviewers with no memory referee it in parallel and raise findings. You decide which findings to accept, and the manuscript becomes version 2.</desc>
+<style>
+  .bg{fill:#fbfaf7}.ink{fill:#1f2328}.muted{fill:#59636e}.line{stroke:#1f2328}
+  .ele{fill:#9aa3ae}.ear{fill:#7b848f}.water{fill:#e3f1fa;stroke:#7fb3d5}
+  .fish{fill:#f08c2e}.doc{fill:#ffffff;stroke:#1f2328}.chip{fill:#eef1f4;stroke:#d0d7de}
+  .wall{stroke:#cf222e}.red{fill:#cf222e}.amber{fill:#bf8700}.green{fill:#1a7f37}.grey{fill:#6e7781}
+  .glow{fill:none;stroke:#f08c2e}.skin{fill:#c99a6e}.shirt{fill:#3d6fb6}
+  
+  text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  .lbl{font-size:12px;font-weight:700;letter-spacing:.12em}
+  .small{font-size:12px}.cap{font-size:17px;font-weight:600}.chipt{font-size:12px}
+
+  .a{animation-duration:14s;animation-iteration-count:infinite;animation-fill-mode:both;animation-timing-function:ease-in-out}
+  .docmove{animation-name:docmove}
+  @keyframes docmove{0%{transform:translate(0,0);opacity:0}3%{opacity:1}22%{transform:translate(0,0)}36%,93%{transform:translate(275px,0);opacity:1}98%,100%{transform:translate(275px,0);opacity:0}}
+  .docline{stroke-dasharray:46;animation-name:draw}
+  @keyframes draw{0%,3%{stroke-dashoffset:46}17%,100%{stroke-dashoffset:0}}
+  .block{animation-name:block}
+  @keyframes block{0%,24%{transform:translate(0,0);opacity:1}34%{transform:translate(258px,0)}36%{transform:translate(246px,0)}38%{transform:translate(258px,0);opacity:1}45%{transform:translate(258px,0);opacity:0}94%{transform:translate(0,0);opacity:0}100%{transform:translate(0,0);opacity:1}}
+  .stop{animation-name:stop}
+  @keyframes stop{0%,33%{opacity:0}36%,46%{opacity:1}50%,100%{opacity:0}}
+  .glowon{animation-name:glowon}
+  @keyframes glowon{0%,42%{opacity:0}48%,70%{opacity:1}76%,100%{opacity:0}}
+  .f1{animation-name:f1}.f2{animation-name:f2}.f3{animation-name:f3}
+  @keyframes f1{0%,49%{opacity:0;transform:translate(0,0)}53%,70%{opacity:1;transform:translate(0,0)}80%{opacity:0;transform:translate(75px,55px)}100%{opacity:0}}
+  @keyframes f2{0%,52%{opacity:0;transform:translate(0,0)}56%,71%{opacity:1;transform:translate(0,0)}81%{opacity:0;transform:translate(75px,-5px)}100%{opacity:0}}
+  @keyframes f3{0%,55%{opacity:0;transform:translate(0,0)}59%,72%{opacity:1;transform:translate(0,0)}82%{opacity:0;transform:translate(75px,-65px)}100%{opacity:0}}
+  .decide{animation-name:decide}
+  @keyframes decide{0%,80%{opacity:0}84%,94%{opacity:1}98%,100%{opacity:0}}
+  .v2{animation-name:v2}
+  @keyframes v2{0%,85%{opacity:0;transform:scale(.6)}89%,94%{opacity:1;transform:scale(1)}98%,100%{opacity:0}}
+  .swim{animation:swim 2.4s ease-in-out infinite alternate}
+  @keyframes swim{from{transform:translate(-5px,0)}to{transform:translate(5px,-2px)}}
+  .c1{animation-name:c1}.c2{animation-name:c2}.c3{animation-name:c3}.c4{animation-name:c4}
+  @keyframes c1{0%{opacity:0}2%,21%{opacity:1}24%,100%{opacity:0}}
+  @keyframes c2{0%,24%{opacity:0}27%,45%{opacity:1}48%,100%{opacity:0}}
+  @keyframes c3{0%,48%{opacity:0}51%,72%{opacity:1}75%,100%{opacity:0}}
+  @keyframes c4{0%,75%{opacity:0}78%,95%{opacity:1}98%,100%{opacity:0}}
+  .c0{opacity:0}
+  @media (prefers-reduced-motion: reduce){
+    .a,.swim{animation:none!important}
+    .c1,.c2,.c3,.c4,.stop,.f1,.f2,.f3,.decide,.v2,.glowon{opacity:0}.c0{opacity:1}
+  }
+</style>
+
+<rect class="bg" x="0" y="0" width="900" height="390" rx="16"/>
+
+<!-- column labels -->
+<text class="lbl muted" x="135" y="40" text-anchor="middle">ELEPHANT</text>
+<text class="lbl muted" x="450" y="40" text-anchor="middle">ISOLATION</text>
+<text class="lbl muted" x="690" y="40" text-anchor="middle">GOLDFISH</text>
+<text class="lbl muted" x="830" y="40" text-anchor="middle">YOU</text>
+<text class="small muted" x="135" y="58" text-anchor="middle">sees the whole project</text>
+<text class="small muted" x="690" y="58" text-anchor="middle">see only the document</text>
+<text class="small muted" x="830" y="58" text-anchor="middle">decide</text>
+
+<!-- elephant -->
+<g transform="translate(118,160)">
+  <rect class="ele" x="-48" y="42" width="20" height="34" rx="6"/>
+  <rect class="ele" x="-14" y="44" width="20" height="32" rx="6"/>
+  <rect class="ele" x="22" y="42" width="20" height="34" rx="6"/>
+  <ellipse class="ele" cx="-8" cy="22" rx="62" ry="40"/>
+  <circle class="ele" cx="50" cy="-10" r="34"/>
+  <ellipse class="ear" cx="30" cy="-6" rx="20" ry="27"/>
+  <path class="ele" d="M76 0 C92 18 90 48 80 62 C76 68 68 66 70 58 C76 42 72 24 62 12 Z"/>
+  <circle class="ink" cx="62" cy="-18" r="3.5"/>
+  <path class="ele" d="M-68 14 q-12 6 -8 20" stroke="#9aa3ae" stroke-width="5" fill="none" stroke-linecap="round"/>
+</g>
+
+<!-- context chips -->
+<g class="a block"><rect class="chip" x="60" y="262" width="118" height="26" rx="13"/><text class="chipt ink" x="119" y="279" text-anchor="middle">💬 conversation</text></g>
+<g class="a block" style="animation-delay:.25s"><rect class="chip" x="60" y="296" width="118" height="26" rx="13"/><text class="chipt ink" x="119" y="313" text-anchor="middle">💭 your intent</text></g>
+<g><rect class="chip" x="186" y="262" width="74" height="26" rx="13"/><text class="chipt ink" x="223" y="279" text-anchor="middle">📊 data</text></g>
+<g><rect class="chip" x="186" y="296" width="74" height="26" rx="13"/><text class="chipt ink" x="223" y="313" text-anchor="middle">🗒 notes</text></g>
+
+<!-- isolation wall -->
+<line class="wall" x1="450" y1="72" x2="450" y2="330" stroke-width="3" stroke-dasharray="8 7"/>
+<g class="a stop"><circle class="red" cx="450" cy="292" r="15"/><path d="M443 285 l14 14 M457 285 l-14 14" stroke="#fff" stroke-width="3" stroke-linecap="round"/></g>
+
+<!-- document -->
+<g class="a docmove">
+  <path class="doc" d="M224 98 h52 l18 18 v78 h-70 z" stroke-width="2.5" stroke-linejoin="round"/>
+  <path class="doc" d="M276 98 v18 h18" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+  <line class="line a docline" x1="236" y1="132" x2="282" y2="132" stroke-width="3" stroke-linecap="round"/>
+  <line class="line a docline" x1="236" y1="146" x2="282" y2="146" stroke-width="3" stroke-linecap="round" style="animation-delay:.3s"/>
+  <line class="line a docline" x1="236" y1="160" x2="282" y2="160" stroke-width="3" stroke-linecap="round" style="animation-delay:.6s"/>
+  <line class="line a docline" x1="236" y1="174" x2="268" y2="174" stroke-width="3" stroke-linecap="round" style="animation-delay:.9s"/>
+  <text class="small muted" x="259" y="214" text-anchor="middle">manuscript.md</text>
+  <g class="a v2" style="transform-origin:292px 100px"><rect class="green" x="276" y="88" width="32" height="20" rx="10"/><text x="292" y="102" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">v2</text></g>
+</g>
+
+<!-- goldfish bowls -->
+<g transform="translate(690,110)">
+  <circle class="glow a glowon" r="34" stroke-width="3"/>
+  <circle class="water" r="28" stroke-width="2"/>
+  <g class="swim"><ellipse class="fish" cx="0" cy="0" rx="12" ry="8"/><path class="fish" d="M-10 0 l-10 -8 v16 z"/><circle class="ink" cx="6" cy="-2" r="1.8"/></g>
+  <text class="small muted" x="0" y="46" text-anchor="middle">methods</text>
+</g>
+<g transform="translate(690,190)">
+  <circle class="glow a glowon" r="34" stroke-width="3" style="animation-delay:.2s"/>
+  <circle class="water" r="28" stroke-width="2"/>
+  <g class="swim" style="animation-delay:-.8s"><ellipse class="fish" cx="0" cy="0" rx="12" ry="8"/><path class="fish" d="M-10 0 l-10 -8 v16 z"/><circle class="ink" cx="6" cy="-2" r="1.8"/></g>
+  <text class="small muted" x="0" y="46" text-anchor="middle">claims</text>
+</g>
+<g transform="translate(690,270)">
+  <circle class="glow a glowon" r="34" stroke-width="3" style="animation-delay:.4s"/>
+  <circle class="water" r="28" stroke-width="2"/>
+  <g class="swim" style="animation-delay:-1.6s"><ellipse class="fish" cx="0" cy="0" rx="12" ry="8"/><path class="fish" d="M-10 0 l-10 -8 v16 z"/><circle class="ink" cx="6" cy="-2" r="1.8"/></g>
+  <text class="small muted" x="0" y="46" text-anchor="middle">reproducibility</text>
+</g>
+
+<!-- findings -->
+<g class="a f1"><rect class="red" x="728" y="100" width="58" height="20" rx="10"/><text x="757" y="114" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">critical</text></g>
+<g class="a f2"><rect class="amber" x="728" y="180" width="58" height="20" rx="10"/><text x="757" y="194" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">major</text></g>
+<g class="a f3"><rect class="grey" x="728" y="260" width="58" height="20" rx="10"/><text x="757" y="274" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">minor</text></g>
+
+<!-- human -->
+<g transform="translate(830,150)">
+  <circle class="skin" cx="0" cy="0" r="17"/>
+  <path class="shirt" d="M-28 58 C-28 30 -16 22 0 22 C16 22 28 30 28 58 Z"/>
+</g>
+<g class="a decide">
+  <rect class="green" x="796" y="226" width="68" height="22" rx="11"/><text x="830" y="241" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">✓ accept</text>
+  <rect class="grey" x="796" y="254" width="68" height="22" rx="11"/><text x="830" y="269" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">✗ reject</text>
+</g>
+
+<!-- captions -->
+<text class="cap ink a c1" x="450" y="366" text-anchor="middle">1 · The elephant drafts with everything it knows about your project</text>
+<text class="cap ink a c2" x="450" y="366" text-anchor="middle">2 · Only the file crosses. No chat, no summary, no intent</text>
+<text class="cap ink a c3" x="450" y="366" text-anchor="middle">3 · Goldfish referee it cold, in parallel, like anonymous reviewers</text>
+<text class="cap ink a c4" x="450" y="366" text-anchor="middle">4 · You weigh each finding. The manuscript is revised, not rubber-stamped</text>
+<text class="cap ink c0" x="450" y="366" text-anchor="middle">Elephant drafts · only the file crosses · goldfish referee cold · you decide</text>
+</svg>
